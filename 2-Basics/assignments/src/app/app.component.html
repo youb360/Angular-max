@@ -1,0 +1,35 @@
+<div class="card">
+  <div class="card-body col-md-10">
+    <h3>Assignment 1 : Components </h3>
+    <app-success-alert></app-success-alert>
+    <app-warning-alert></app-warning-alert>
+    <hr>
+    <p>{{ data1 }}</p>
+    <p [innerText]="data2"></p>
+    <button type="button" class="btn btn-secondary" (click)="print()">
+      Secondary
+    </button>
+    <input type="text" (input)="update($event)">
+    <p>{{ data3 }}</p>
+    <hr>
+    <h3>Assignment 2 : Databinding </h3>
+    <input type="text"  placeholder="username ..." [(ngModel)]="username">
+    <p>{{ username }}</p>
+    <button type="button" class="btn btn-primary" [disabled]="usernameIsEmpty()" (click)="updateUsername()">
+      reset Username
+    </button>
+    <hr>
+    <h3>Assignment 3 : Directives </h3>
+    <button type="button" class="btn btn-primary" (click)="display()">
+      Display Details
+    </button>
+    <p *ngIf="details">Secrect Password = tuna </p>
+    <p *ngFor="let n of items; let i = index"
+       [ngStyle]="{backgroundColor: i>=4 ? 'deepskyblue':'none'}"
+       [ngClass]="{'color-text': i>=4 }"
+    > {{ n }}</p>
+  </div>
+</div>
+
+
+
